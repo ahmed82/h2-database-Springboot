@@ -1,4 +1,4 @@
-package com.tro.tutorial.H2datase.model;
+package com.tro.tutorial.H2datase.employee;
 
 public class Employee {
 	
