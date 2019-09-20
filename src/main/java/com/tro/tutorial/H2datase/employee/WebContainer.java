@@ -17,10 +17,7 @@ public class WebContainer {
 	
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
-		return Arrays.asList(
-				new Employee("01", "Ahmed", "Sr JEE"),
-				new Employee("02", "Omar", "Toddler")
-				); 
+		return employeeService.getAllEmployees();
 	}
 	
 	public Employee findEmployee(@RequestParam String id){
