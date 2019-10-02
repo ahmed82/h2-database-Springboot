@@ -12,3 +12,9 @@ https://start.spring.io/
  	docker build -t docker-spring-h2db .
  Docker Run and Push:
  	docker run -p 8085:8085 docker-spring-h2db
+ 	
+ --------------------------------------
+ 
+ To Run the New 10-2019 Actuator:
+ $ curl localhost:9001/actuator/health
+ --------------------------------------- 
