@@ -1,11 +1,11 @@
 package com.tro.tutorial.H2datase.employee;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,10 +19,10 @@ public class WebContainer {
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
-	
-	public Employee findEmployee(@RequestParam String id){
-		
-			return null;
+	 // findEmployee(@PathVariable("foo") String id){
+	@RequestMapping("/employees/{id}")
+	public Employee findEmployee(@PathVariable String id){
+			return employeeService.getEmployee(id);
 	}
 
 }

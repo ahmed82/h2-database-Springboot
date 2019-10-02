@@ -9,12 +9,16 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
 
 		private List<Employee> employees = Arrays.asList(
-				new Employee("01", "Ahmed", "Sr JEE"),
-				new Employee("02", "Omar", "Toddler"),
-				new Employee("03", "Tiba", "Kid")
+				new Employee("as", "Ahmed", "Sr JEE"),
+				new Employee("os", "Omar", "Toddler"),
+				new Employee("ts", "Tiba", "Kid")
 				);
 	
 	public List<Employee> getAllEmployees(){
 		return this.employees;
+	}
+
+	public Employee getEmployee(String id) {
+		return employees.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 	}
 }
