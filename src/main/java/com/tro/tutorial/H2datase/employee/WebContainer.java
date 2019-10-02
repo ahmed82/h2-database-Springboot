@@ -1,6 +1,7 @@
 package com.tro.tutorial.H2datase.employee;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class WebContainer {
 	}
 	 // findEmployee(@PathVariable("foo") String id){
 	@RequestMapping("/employees/{id}")
-	public Employee getEmployee(@PathVariable String id){
+	public Optional<Employee> getEmployee(@PathVariable String id){
 			return employeeService.getEmployee(id);
 	}
 	
