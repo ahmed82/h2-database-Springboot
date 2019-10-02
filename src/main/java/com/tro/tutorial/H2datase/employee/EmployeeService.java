@@ -39,4 +39,8 @@ public class EmployeeService {
 		}
 		
 	}
+
+	public void deleteEmployee(String id) {
+		employees.removeIf(e -> e.getId().equals(id));
+	}
 }

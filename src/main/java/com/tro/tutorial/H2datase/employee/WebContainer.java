@@ -24,7 +24,7 @@ public class WebContainer {
 	}
 	 // findEmployee(@PathVariable("foo") String id){
 	@RequestMapping("/employees/{id}")
-	public Employee findEmployee(@PathVariable String id){
+	public Employee getEmployee(@PathVariable String id){
 			return employeeService.getEmployee(id);
 	}
 	
@@ -39,6 +39,9 @@ public class WebContainer {
 		employeeService.updateEmployee(id,employee);
 	}
 	
-	
+	@RequestMapping(method=RequestMethod.DELETE,value="/employees/{id}")
+	public void deleteEmployee(@PathVariable String id){
+			 employeeService.deleteEmployee(id);
+	}
 
 }
