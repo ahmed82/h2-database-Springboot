@@ -1,7 +1,6 @@
 package com.tro.tutorial.H2datase.employee;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
 	
 	@Autowired
+	//@Qualifier("emprep")
 	private EmployeeRepository employeeRepository;
 
 		/*private List<Employee> employees = new ArrayList <> ( 

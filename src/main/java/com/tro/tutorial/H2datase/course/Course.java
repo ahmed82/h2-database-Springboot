@@ -12,7 +12,7 @@ public class Course {
 	@Id
 	private String id;
 	private String name;
-	private String descriptioin;
+	private String description;
 	
 	@ManyToOne
 	private Employee employee;
@@ -21,11 +21,11 @@ public class Course {
 		super();
 	}
 
-	public Course(String id, String name, String descriptioin, String employeeId) {
+	public Course(String id, String name, String description, String employeeId) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.descriptioin = descriptioin;
+		this.description = description;
 		this.employee = new Employee(employeeId, "", "");
 	}
 	
@@ -56,11 +56,11 @@ public class Course {
 	}
 
 	public String getDescriptioin() {
-		return descriptioin;
+		return description;
 	}
 
-	public void setDescriptioin(String descriptioin) {
-		this.descriptioin = descriptioin;
+	public void setDescriptioin(String description) {
+		this.description = description;
 	}
 	
 	

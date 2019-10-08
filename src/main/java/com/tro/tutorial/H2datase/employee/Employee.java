@@ -1,25 +1,37 @@
 package com.tro.tutorial.H2datase.employee;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
+	
+	@NotBlank
 	private String name;
-	private String descriptioin;
+	private String description;
 	
 	public Employee() {
 		super();
 	}
 
-	public Employee(String id, String name, String descriptioin) {
+	public Employee(@JsonProperty("id") String id, 
+			@JsonProperty("name") String name,
+			@JsonProperty("description") String description) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.descriptioin = descriptioin;
+		this.description = description;
 	}
 
 	public String getId() {
@@ -39,11 +51,11 @@ public class Employee {
 	}
 
 	public String getDescriptioin() {
-		return descriptioin;
+		return description;
 	}
 
-	public void setDescriptioin(String descriptioin) {
-		this.descriptioin = descriptioin;
+	public void setDescriptioin(String description) {
+		this.description = description;
 	}
 	
 	
