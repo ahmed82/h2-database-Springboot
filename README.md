@@ -7,6 +7,8 @@ https://start.spring.io/
  Accessing the H2 Console:
  http://localhost:8080/h2-console
  
+  http://localhost:8066/employees
+  
  ----------------------------------
  Docker build:
  	docker build -t docker-spring-h2db .
