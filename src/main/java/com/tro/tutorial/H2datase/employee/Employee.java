@@ -18,20 +18,40 @@ public class Employee {
 	private String id;
 	
 	@NotBlank
-	private String name;
+	private String firstname;
+	private String lastname;
 	private String description;
 	
 	public Employee() {
 		super();
 	}
 
-	public Employee(@JsonProperty("id") String id, 
-			@JsonProperty("name") String name,
-			@JsonProperty("description") String description) {
+	public Employee(
+			@JsonProperty("id") 
+			String id, 
+			
+			@JsonProperty("FirstName") 
+			String firstname,
+			
+			@JsonProperty("LastName") 
+			String lastname,
+			
+			@JsonProperty("description") 
+			String description) {
+		
 		super();
 		this.id = id;
-		this.name = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.description = description;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getId() {
@@ -41,14 +61,7 @@ public class Employee {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+ 
 
 	public String getDescriptioin() {
 		return description;

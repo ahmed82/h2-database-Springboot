@@ -34,13 +34,13 @@ public class CourseController {
 	//@RequestMapping(value="/employees",method=RequestMethod.POST )
 	@PostMapping("/employees/{employeeId}/cources")
 	public void addCourse(@RequestBody Course cource, @PathVariable String employeeId){
-		cource.setEmployee(new Employee(employeeId, "", ""));
+		cource.setEmployee(new Employee(employeeId, "", "",""));
 		courcesService.addCourses(cource);
 	}
 	
 	@RequestMapping(value="/employees/{emploueeId}/cources/{id}",method=RequestMethod.PUT)
 	public void updateCourse(@RequestBody Course cource, @PathVariable String id, @PathVariable String employeeId){
-		cource.setEmployee(new Employee(employeeId, "", ""));
+		cource.setEmployee(new Employee(employeeId, "", "",""));
 		courcesService.updateCourses(cource);
 	}
 	
